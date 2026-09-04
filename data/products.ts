@@ -719,7 +719,7 @@ const productImages: Record<string, string> = {
   'asus-tuf-gaming-vg27vh1b-curved-monitor': '/products/asus-tuf-gaming-vg27vh1b-curved-monitor.png',
   'msi-mag-27-fhd-280hz-gaming-monitor': '/products/msi-mag-27-fhd-280hz-gaming-monitor.webp',
   'samsung-odyssey-oled-g9-49-ultrawide': '/products/samsung-odyssey-oled-g9-49-ultrawide.jpg',
-  'msi-katana-15-hx-gaming-laptop': '/products/msi-katana-15-hx-gaming-laptop.jpg',
+  'msi-katana-15-hx-gaming-laptop': '/products/msi-katana-15-hx-gaming-laptop.png',
   'asus-zenbook-14-oled': '/products/asus-zenbook-14-oled.png',
   'asus-vivobook-go-15': '/products/asus-vivobook-go-15.png',
   'lenovo-thinkpad-11e-yoga-gen-6': '/products/lenovo-thinkpad-11e-yoga-gen-6.jpg',
