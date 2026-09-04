@@ -740,6 +740,9 @@ const productImages: Record<string, string> = {
   'jabra-evolve2-65-wireless-headset': '/products/jabra-evolve2-65-wireless-headset.png',
   'msi-claw-a8-bz2em-handheld': '/products/msi-claw-a8-bz2em-handheld.jpg',
   'logitech-meetup-conference-camera': '/products/logitech-meetup-conference-camera.png',
+  'hp-elitebook-8-g1i-14': '/products/hp-elitebook-8-g1i-14.webp',
+  'hp-pavilion-x360-14-2-in-1': '/products/hp-pavilion-x360-14-2-in-1.webp',
+  'hp-e24mv-g4-conference-monitor': '/products/hp-e24mv-g4-conference-monitor.webp',
 };
 
 for (const product of products) {
