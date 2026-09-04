@@ -730,6 +730,16 @@ const productImages: Record<string, string> = {
   'hyperx-pulsefire-haste-2-gaming-mouse': '/products/hyperx-pulsefire-haste-2-gaming-mouse.jpg',
   'hyperx-cloud-alpha-gaming-headset': '/products/hyperx-cloud-alpha-gaming-headset.jpg',
   'ubiquiti-u7-lr-unifi-access-point': '/products/ubiquiti-u7-lr-unifi-access-point.png',
+  'ubiquiti-u6-mesh-pro-access-point': '/products/ubiquiti-u6-mesh-pro-access-point.png',
+  'ubiquiti-unifi-protect-g6-bullet-camera': '/products/ubiquiti-unifi-protect-g6-bullet-camera.png',
+  'ubiquiti-ua-g3-sk-access-starter-kit': '/products/ubiquiti-ua-g3-sk-access-starter-kit.png',
+  'asus-zenwifi-pro-xt12-mesh-2-pack': '/products/asus-zenwifi-pro-xt12-mesh-2-pack.png',
+  'noctua-nh-u9-tr4-sp3-cpu-cooler': '/products/noctua-nh-u9-tr4-sp3-cpu-cooler.jpg',
+  'asus-rog-ryuo-iv-slc-360-aio': '/products/asus-rog-ryuo-iv-slc-360-aio.png',
+  'asus-tuf-gaming-h3-headset': '/products/asus-tuf-gaming-h3-headset.png',
+  'jabra-evolve2-65-wireless-headset': '/products/jabra-evolve2-65-wireless-headset.png',
+  'msi-claw-a8-bz2em-handheld': '/products/msi-claw-a8-bz2em-handheld.jpg',
+  'logitech-meetup-conference-camera': '/products/logitech-meetup-conference-camera.png',
 };
 
 for (const product of products) {
