@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, User, Heart, ShoppingCart, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, User, Heart, ShoppingCart, Phone } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 import { SearchBar } from './SearchBar';
 import { categories, subCategories } from '@/data/categories';
@@ -73,29 +73,27 @@ export function Header() {
         <SearchBar />
       </div>
 
-      {/* Category nav w/ mega-menu (desktop) */}
-      <nav className="hidden border-t border-cloud lg:block" aria-label="Product categories">
-        <div className="shell flex items-center gap-1">
+      {/* Category nav — Apple-style frosted bar (desktop) */}
+      <nav
+        className="hidden border-b border-black/[0.06] bg-[rgba(251,251,253,0.72)] backdrop-blur-xl [backdrop-filter:saturate(1.8)_blur(20px)] lg:block"
+        aria-label="Product categories"
+      >
+        <div className="mx-auto flex h-12 max-w-shell items-center justify-between px-5 sm:px-6 lg:px-8">
           {categories.map((cat) => (
-            <div key={cat.slug} className="group relative">
+            <div key={cat.slug} className="group relative flex h-full items-center">
               <Link
                 href={`/category/${cat.slug}`}
-                className="flex items-center gap-1 px-3 py-3 text-body font-medium text-teal transition-colors hover:text-green-700 group-hover:text-green-700"
+                className="px-1 text-[0.75rem] font-normal tracking-[-0.01em] text-ink/70 transition-colors duration-200 hover:text-ink"
               >
                 {cat.name}
-                {subCategories[cat.slug] && (
-                  <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
-                )}
               </Link>
-              {/* underline on hover */}
-              <span className="absolute inset-x-3 bottom-0 h-0.5 origin-left scale-x-0 bg-green transition-transform duration-200 group-hover:scale-x-100" />
               {subCategories[cat.slug] && (
-                <div className="invisible absolute left-0 top-full z-50 min-w-[220px] translate-y-1 rounded-btn border border-cloud bg-white p-2 opacity-0 shadow-card-hover transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 top-full z-50 min-w-[220px] -translate-x-1/2 translate-y-1 rounded-xl border border-black/[0.06] bg-white/90 p-2 opacity-0 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   {subCategories[cat.slug].map((sub) => (
                     <Link
                       key={sub}
                       href={`/category/${cat.slug}?filter=${encodeURIComponent(sub)}`}
-                      className="block rounded px-3 py-2 text-body text-slate hover:bg-teal-tint hover:text-teal"
+                      className="block rounded-lg px-3 py-2 text-[0.8125rem] text-slate transition-colors hover:bg-black/[0.04] hover:text-ink"
                     >
                       {sub}
                     </Link>
@@ -106,7 +104,7 @@ export function Header() {
           ))}
           <Link
             href="/category/deals"
-            className="ml-auto flex items-center gap-1 px-3 py-3 text-body font-semibold text-orange-600 hover:text-orange"
+            className="px-1 text-[0.75rem] font-normal tracking-[-0.01em] text-ink/70 transition-colors duration-200 hover:text-ink"
           >
             Special Deals
           </Link>
