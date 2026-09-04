@@ -705,6 +705,37 @@ export const products: Product[] = [
   }),
 ];
 
+/**
+ * Real product photography stored in /public/products, sourced from manufacturer
+ * and reliable retailer CDNs and matched to the exact (or closest) model.
+ * Products not listed here fall back to the branded PlaceholderImage.
+ */
+const productImages: Record<string, string> = {
+  'asus-tuf-gaming-geforce-rtx-5090': '/products/asus-tuf-gaming-geforce-rtx-5090.png',
+  'asus-dual-geforce-rtx-5070': '/products/asus-dual-geforce-rtx-5070.png',
+  'gigabyte-geforce-rtx-5070-eagle': '/products/gigabyte-geforce-rtx-5070-eagle.png',
+  'gigabyte-x870m-aorus-elite-wifi7': '/products/gigabyte-x870m-aorus-elite-wifi7.png',
+  'asus-rog-strix-xg27wcs-27-gaming-monitor': '/products/asus-rog-strix-xg27wcs-27-gaming-monitor.webp',
+  'asus-tuf-gaming-vg27vh1b-curved-monitor': '/products/asus-tuf-gaming-vg27vh1b-curved-monitor.png',
+  'msi-mag-27-fhd-280hz-gaming-monitor': '/products/msi-mag-27-fhd-280hz-gaming-monitor.webp',
+  'samsung-odyssey-oled-g9-49-ultrawide': '/products/samsung-odyssey-oled-g9-49-ultrawide.jpg',
+  'msi-katana-15-hx-gaming-laptop': '/products/msi-katana-15-hx-gaming-laptop.jpg',
+  'asus-zenbook-14-oled': '/products/asus-zenbook-14-oled.png',
+  'asus-vivobook-go-15': '/products/asus-vivobook-go-15.png',
+  'lenovo-thinkpad-11e-yoga-gen-6': '/products/lenovo-thinkpad-11e-yoga-gen-6.jpg',
+  'logitech-g-pro-x-superlight-wireless-mouse': '/products/logitech-g-pro-x-superlight-wireless-mouse.png',
+  'logitech-g-pro-mechanical-gaming-keyboard': '/products/logitech-g-pro-mechanical-gaming-keyboard.png',
+  'corsair-dark-core-pro-se-wireless-mouse': '/products/corsair-dark-core-pro-se-wireless-mouse.png',
+  'steelseries-rival-600-gaming-mouse': '/products/steelseries-rival-600-gaming-mouse.png',
+  'hyperx-pulsefire-haste-2-gaming-mouse': '/products/hyperx-pulsefire-haste-2-gaming-mouse.jpg',
+  'hyperx-cloud-alpha-gaming-headset': '/products/hyperx-cloud-alpha-gaming-headset.jpg',
+  'ubiquiti-u7-lr-unifi-access-point': '/products/ubiquiti-u7-lr-unifi-access-point.png',
+};
+
+for (const product of products) {
+  if (productImages[product.slug]) product.imageUrl = productImages[product.slug];
+}
+
 // ─── Accessors ─────────────────────────────────────────────────────────────
 export const productBySlug = (slug: string) => products.find((p) => p.slug === slug);
 export const productsByCategory = (slug: string) => products.filter((p) => p.categorySlug === slug);

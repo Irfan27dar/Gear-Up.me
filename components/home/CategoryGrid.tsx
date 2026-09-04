@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { PlaceholderImage } from '@/components/ui/PlaceholderImage';
+import { ProductMedia } from '@/components/ui/ProductMedia';
 import { Reveal } from '@/components/ui/Reveal';
 import { categories } from '@/data/categories';
 import { productsByCategory } from '@/data/products';
@@ -25,9 +25,14 @@ export function CategoryGrid() {
                 href={`/category/${cat.slug}`}
                 className="group relative flex h-full flex-col overflow-hidden rounded-btn border border-cloud bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[16/10] overflow-hidden bg-cloud/40 p-4">
                   <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
-                    <PlaceholderImage category={cat.slug} />
+                    <ProductMedia
+                      src={cat.imageUrl}
+                      alt={cat.name}
+                      category={cat.slug}
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
                   </div>
                   <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-btn bg-white/90 text-teal opacity-0 shadow-card transition-all duration-300 group-hover:opacity-100">
                     <ArrowUpRight size={18} />
