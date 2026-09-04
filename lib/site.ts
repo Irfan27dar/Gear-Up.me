@@ -1,3 +1,14 @@
+/**
+ * Resolve the canonical site URL. Guards against an unset OR empty/whitespace
+ * NEXT_PUBLIC_SITE_URL (Vercel treats a blank env var as "") and a missing
+ * protocol, so `new URL(site.url)` in metadata never throws at build time.
+ */
+function resolveSiteUrl(): string {
+  const raw = (process.env.NEXT_PUBLIC_SITE_URL ?? '').trim();
+  if (!raw) return 'https://gear-up.me';
+  return /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+}
+
 /** Single source of truth for company / contact info (footer, contact, metadata). */
 export const site = {
   name: 'Gear-Up.me',
@@ -11,7 +22,7 @@ export const site = {
   phoneHref: 'tel:+97142231780',
   email: 'sales@gear-up.me',
   currency: 'AED',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gear-up.me',
+  url: resolveSiteUrl(),
   freeShippingThreshold: 500,
   social: {
     instagram: 'https://instagram.com',
